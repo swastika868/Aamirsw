@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101828">
+  <title>Secure Payment</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="brand-mark">₹</div>
+      <p class="eyebrow">SECURE CHECKOUT</p>
+      <h1>Make a payment</h1>
+      <p class="sub">Enter your details and pay securely using UPI or other supported methods.</p>
+    </section>
+
+    <form id="payment-form" class="panel">
+      <label for="username">Full name / username</label>
+      <input id="username" name="username" autocomplete="name" minlength="2" maxlength="80" required placeholder="Your name">
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com">
+
+      <label for="amount">Payment amount (INR)</label>
+      <div class="amount-wrap"><span>₹</span><input id="amount" name="amount" type="number" min="1" max="100000" step="0.01" required placeholder="Enter amount"></div>
+      <p class="hint">Allowed amount: ₹1 to ₹1,00,000. The server validates the final amount.</p>
+
+      <button id="pay-button" type="submit">Continue to secure payment <span>→</span></button>
+      <p class="fine">Your payment is verified securely on our server. Do not share your UPI PIN or OTP with anyone.</p>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </form>
+    <footer>Payments processed by Razorpay · <a href="/admin.html">Admin</a></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
